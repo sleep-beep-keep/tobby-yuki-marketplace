@@ -81,28 +81,3 @@ export default function CheckoutPage() {
     </div>
   );
 }
-              </div>
-              <div className={styles.formGroup}><label>PIN Code</label><input type="text" placeholder="411001" maxLength={6}/></div>
-            </div>
-          </div>
-
-          <div className={styles.block}>
-            <div className={styles.blockTitle}>Delivery Option</div>
-            <div className={styles.deliveryOpts}>
-              {DELIVERY_OPTS.map((opt, i) => (
-                <div key={i} className={`${styles.deliveryOpt} ${delivery===i ? styles.selected : ''}`} onClick={() => setDelivery(i)}>
-                  <input type="radio" name="delivery" checked={delivery===i} readOnly/>
-                  <div className={styles.optBody}><div className={styles.optLabel}>{opt.label}</div><div className={styles.optSub}>{opt.sub}</div></div>
-                  <div className={styles.optPrice}>₹{opt.price}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <button className={`btn-cta ${styles.continueBtn}`} onClick={() => router.push('/payment')}>Continue to Payment →</button>
-        </div>
-        <OrderSummary shipping={DELIVERY_OPTS[delivery].price} />
-      </div>
-    </>
-  );
-}
