@@ -30,7 +30,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.heroImg}>
-          <Image src="/images/hero.jpg" alt="Dog in adventure harness" fill style={{ objectFit:'cover' }} priority sizes="420px" />
+          <Image src="/logo.png" alt="Tobby & Yuki" fill style={{ objectFit:'contain' }} priority sizes="420px" />
         </div>
       </section>
 
