@@ -1,0 +1,20 @@
+.body { display: grid; grid-template-columns: 1fr 360px; gap: 32px; padding: 40px 48px; max-width: 1100px; margin: 0 auto; }
+.heading { font-family: var(--font-display); font-size: 26px; font-weight: 600; color: var(--primary); margin-bottom: 24px; }
+.block { background: #fff; border: 1px solid var(--border); padding: 28px; margin-bottom: 20px; }
+.blockTitle { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.methods { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.method { border: 1.5px solid var(--border); padding: 14px 16px; cursor: pointer; transition: all .2s; display: flex; align-items: center; gap: 14px; }
+.selected { border-color: var(--primary); background: var(--light-green); }
+.methodIcon { font-size: 26px; width: 36px; text-align: center; flex-shrink: 0; }
+.methodLabel { font-size: 14px; font-weight: 600; }
+.methodSub { font-size: 12px; color: var(--muted); }
+.cardFields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+.upiField { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+.formGroup { display: flex; flex-direction: column; gap: 6px; }
+.full { grid-column: 1/-1; }
+.formGroup label { font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+.formGroup input { border: 1.5px solid var(--border); padding: 11px 14px; font-size: 14px; color: var(--text); outline: none; transition: border-color .2s; background: #fff; width: 100%; font-family: var(--font-sans); }
+.formGroup input:focus { border-color: var(--primary); }
+.secureNote { background: var(--light-green); border: 1px solid var(--primary); padding: 20px; display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--primary); margin-bottom: 20px; }
+.placeBtn { width: 100%; padding: 16px; font-size: 14px; }
+@media(max-width:768px) { .body { grid-template-columns: 1fr; padding: 20px 16px; } .cardFields { grid-template-columns: 1fr; } }

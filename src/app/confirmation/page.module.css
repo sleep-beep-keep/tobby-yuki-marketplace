@@ -1,0 +1,11 @@
+.wrap { padding: 80px 48px; text-align: center; max-width: 640px; margin: 0 auto; }
+.icon { font-size: 80px; margin-bottom: 24px; animation: pop .4s ease; }
+.title { font-family: var(--font-display); font-size: 44px; font-weight: 600; color: var(--primary); margin-bottom: 10px; }
+.sub { font-size: 15px; color: var(--muted); margin-bottom: 36px; line-height: 1.7; }
+.orderNum { background: var(--light-green); padding: 20px; text-align: center; margin-bottom: 28px; }
+.orderLabel { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.orderVal { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--primary); }
+.summary { background: #fff; border: 1px solid var(--border); padding: 28px; margin-bottom: 32px; text-align: left; }
+.row { display: flex; justify-content: space-between; font-size: 14px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.rowLabel { color: var(--muted); }
+.rowTotal { display: flex; justify-content: space-between; font-size: 16px; font-weight: 700; padding-top: 14px; }

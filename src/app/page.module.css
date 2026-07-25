@@ -1,0 +1,55 @@
+.hero { background: linear-gradient(180deg, #0E4CA1 0%, #1A7FD1 100%); padding: 24px 48px 0; display: grid; grid-template-columns: 1fr 420px; gap: 0; min-height: 440px; align-items: center; overflow: hidden; position: relative; }
+.heroContent { position: relative; z-index: 2; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.h1 { font-family: var(--font-display); font-size: 54px; font-weight: 600; color: #fff; line-height: 1.05; margin-bottom: 18px; }
+.h1 em { font-style: italic; color: var(--accent); }
+.heroSub { font-size: 15px; color: rgba(255,255,255,.65); margin-bottom: 32px; max-width: 420px; line-height: 1.7; }
+.heroBtns { display: flex; gap: 12px; flex-wrap: wrap; }
+.heroImg { height: 440px; position: relative; overflow: hidden; }
+.section { padding: 72px 48px; }
+.whiteBg { background: #fff; }
+.sectionTitle { font-family: var(--font-display); font-size: 34px; font-weight: 600; color: var(--primary); text-align: center; margin-bottom: 44px; }
+.petSection { background: #fff; padding: 48px; }
+.petSection .sectionTitle { margin-bottom: 24px; }
+.petGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 520px; margin: 0 auto; }
+.petBtn { background: var(--white); border: 1.5px solid var(--border); padding: 22px 16px; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 16px; font-weight: 500; color: var(--text); transition: all .2s; }
+.petBtn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.petImg { width: 40px; height: 40px; border-radius: 50%; position: relative; overflow: hidden; flex-shrink: 0; }
+.catsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 600px; margin: 0 auto; }
+.catCard { background: #fff; border: 1px solid var(--border); padding: 28px 16px; text-align: center; transition: all .22s; }
+.catCard:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,.07); }
+.catIcon { font-size: 38px; margin-bottom: 12px; }
+.catName { font-size: 13px; font-weight: 500; }
+.productsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.bannerWrap { padding: 0 48px 64px; }
+.banner { background: var(--primary); padding: 48px 56px; display: flex; align-items: center; justify-content: space-between; position: relative; overflow: hidden; transition: opacity .2s; }
+.banner:hover { opacity: .95; }
+.bannerLabel { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.bannerTitle { font-family: var(--font-display); font-size: 38px; font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 20px; }
+.bannerImg { width: 180px; height: 180px; border-radius: 50%; position: relative; overflow: hidden; flex-shrink: 0; box-shadow: 0 20px 50px rgba(0,0,0,.3); }
+.whyGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.whyImg { aspect-ratio: 4/3; position: relative; overflow: hidden; }
+.whyPoints { display: flex; flex-direction: column; gap: 24px; }
+.whyPoint { display: flex; gap: 18px; align-items: flex-start; }
+.whyIcon { width: 42px; height: 42px; background: var(--light-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+.whyPoint h4 { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.whyPoint p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.newsletter { background: #fff; border-top: 1px solid var(--border); padding: 36px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.newsletter h4 { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--primary); margin-bottom: 4px; }
+.newsletter p { font-size: 13px; color: var(--muted); }
+.nlForm { display: flex; width: 400px; flex-shrink: 0; }
+.nlInput { flex: 1; border: 1.5px solid var(--border); border-right: none; padding: 12px 16px; font-size: 14px; outline: none; }
+.nlInput:focus { border-color: var(--primary); }
+@media(max-width:768px) {
+  .hero { grid-template-columns: 1fr; padding: 40px 16px; min-height: auto; }
+  .heroImg { display: none; }
+  .h1 { font-size: 36px; }
+  .section { padding: 40px 16px; }
+  .petSection { padding: 40px 16px; }
+  .productsGrid { grid-template-columns: repeat(2,1fr); }
+  .bannerWrap { padding: 0 16px 40px; }
+  .banner { padding: 28px; flex-direction: column; gap: 16px; }
+  .whyGrid { grid-template-columns: 1fr; }
+  .newsletter { flex-direction: column; padding: 24px 16px; }
+  .nlForm { width: 100%; }
+}

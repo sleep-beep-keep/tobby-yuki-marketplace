@@ -1,0 +1,39 @@
+:root {
+  --bg: #E9F7FF;
+  --white: #FFFFFF;
+  --primary: #0E4CA1;
+  --primary-mid: #0B3D86;
+  --accent: #4DE8FF;
+  --cta: #1194FF;
+  --cta-hover: #0C7AE0;
+  --gold: #79E0FF;
+  --text: #10314D;
+  --muted: #4B6B85;
+  --border: #D6EEFF;
+  --light-green: #E5F7FF;
+  --tag-bg: #D9F1FF;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-sans: 'DM Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+a { text-decoration: none; color: inherit; cursor: pointer; }
+button { cursor: pointer; font-family: var(--font-sans); }
+input, select { font-family: var(--font-sans); }
+
+.btn-primary { background: var(--primary); color: #fff; border: none; padding: 12px 28px; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; transition: background .2s; }
+.btn-primary:hover { background: var(--primary-mid); }
+.btn-cta { background: var(--cta); color: #fff; border: none; padding: 14px 32px; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; transition: background .2s; }
+.btn-cta:hover { background: var(--cta-hover); }
+.btn-outline { background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 12px 28px; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; transition: all .2s; }
+.btn-outline:hover { background: var(--primary); color: #fff; }
+.btn-ghost { background: rgba(255,255,255,.15); color: #fff; border: 1.5px solid rgba(255,255,255,.4); padding: 12px 28px; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; transition: all .2s; }
+.btn-ghost:hover { background: rgba(255,255,255,.3); }
+.btn-full { width: 100%; padding: 16px; font-size: 14px; }
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+@keyframes pop { 0%{transform:scale(.5);opacity:0} 80%{transform:scale(1.1)} 100%{transform:scale(1);opacity:1} }

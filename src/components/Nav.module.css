@@ -1,0 +1,28 @@
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #fff; border-bottom: 1px solid var(--border);
+  padding: 0 48px; display: flex; align-items: center;
+  justify-content: space-between; height: 64px;
+  overflow: visible;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+.logo span { color: var(--accent); }
+.logoImage {
+  display: block;
+  width: auto;
+  max-height: 138px;
+  transform: translateY(14px);
+  transform-origin: top left;
+}
+.links { display: flex; gap: 32px; list-style: none; }
+.links a { font-size: 14px; font-weight: 500; color: var(--text); letter-spacing: .03em; padding: 4px 0; border-bottom: 2px solid transparent; transition: all .2s; }
+.links a:hover { color: var(--primary); border-bottom-color: var(--accent); }
+.actions { display: flex; align-items: center; gap: 18px; }
+.icon { background: none; border: none; font-size: 20px; color: var(--text); display: flex; align-items: center; position: relative; padding: 4px; }
+.badge { position: absolute; top: -6px; right: -8px; background: var(--cta); color: #fff; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); }
+@media(max-width:768px) { .nav { padding: 0 16px; } .links { display: none; } }
