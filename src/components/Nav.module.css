@@ -4,8 +4,9 @@
   padding: 0 48px; display: flex; align-items: center;
   justify-content: space-between; height: 64px;
   overflow: visible;
+  transition: background-color .3s ease-in-out, border-bottom-color .3s ease-in-out;
 }
-.homePage { background: #0E4CA1; border-bottom: none; }
+.homePage { background: #0E4CA1; border-bottom-color: transparent; }
 .homePage .menuButton { color: #fff; }
 .innerPage { position: relative; }
 .innerPage .logo { top: 4px; }
@@ -35,4 +36,16 @@
 .menuItem { position: relative; display: flex; align-items: center; gap: 8px; width: 100%; padding: 10px 12px; background: none; border: none; color: var(--text); cursor: pointer; font: inherit; font-size: 14px; text-align: left; white-space: nowrap; }
 .menuItem:hover, .menuItem:focus { background: var(--light-green); outline: none; }
 .badge { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; padding: 0 4px; background: var(--cta); border-radius: 9px; color: #fff; font-family: var(--font-sans); font-size: 10px; font-weight: 700; }
+
+.scrolled {
+  background: rgba(255,255,255,.8);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+}
+.homePage.scrolled {
+  background: rgba(14,76,161,.7);
+  border-bottom-color: transparent;
+}
+.homePage.scrolled .menuButton { color: #fff; }
+
 @media(max-width:768px) { .nav { padding: 0 16px; } .logo { left: 16px; } .innerPage .logo { top: 4px; } .links { display: none; } }

@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import { useCart } from '@/context/CartContext';
 import { useProfile } from '@/context/ProfileContext';
 import styles from './Nav.module.css';
@@ -10,8 +11,26 @@ export default function Nav() {
   const pathname = usePathname();
   const { itemCount } = useCart();
   const { profile, openProfile, isLoggedIn } = useProfile();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className={`${styles.nav} ${pathname === '/' ? styles.homePage : styles.innerPage}`}>
+    <nav className={`${styles.nav} ${pathname === '/' ? styles.homePage : styles.innerPage} ${isScrolled ? styles.scrolled : ''}`}>
       <Link href="/" className={styles.logo} aria-label="Home">
         <Image
           src="/logo.png"
