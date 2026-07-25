@@ -7,10 +7,12 @@ import styles from './ProductModal.module.css';
 export default function ProductModal({ product, onClose }) {
   const { addToCart } = useCart();
   const images = product?.images || [product?.img];
-  const [selectedImage, setSelectedImage] = useState(images[0]);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const activeImageIndex = Math.min(selectedImageIndex, images.length - 1);
+  const selectedImage = images[activeImageIndex];
 
   useEffect(() => {
-    setSelectedImage(images[0]);
+    setSelectedImageIndex(0);
   }, [product]);
 
   if (!product) return null;
@@ -21,15 +23,25 @@ export default function ProductModal({ product, onClose }) {
         <button className={styles.close} onClick={onClose}>×</button>
         <div className={styles.imgWrap}>
           <Image src={selectedImage} alt={product.name} fill style={{ objectFit: 'cover' }} sizes="400px" />
+          {images.length > 1 && (
+            <>
+              <button className={`${styles.imageNavZone} ${styles.prevZone}`} type="button" onClick={() => setSelectedImageIndex(index => (index - 1 + images.length) % images.length)} aria-label="Previous product image">
+                <span className={styles.imageNavButton} aria-hidden="true">‹</span>
+              </button>
+              <button className={`${styles.imageNavZone} ${styles.nextZone}`} type="button" onClick={() => setSelectedImageIndex(index => (index + 1) % images.length)} aria-label="Next product image">
+                <span className={styles.imageNavButton} aria-hidden="true">›</span>
+              </button>
+            </>
+          )}
         </div>
         {images.length > 1 && (
           <div className={styles.thumbs}>
-            {images.map(src => (
+            {images.map((src, index) => (
               <button
                 key={src}
-                className={`${styles.thumb} ${src === selectedImage ? styles.thumbActive : ''}`}
+                className={`${styles.thumb} ${index === activeImageIndex ? styles.thumbActive : ''}`}
                 type="button"
-                onClick={() => setSelectedImage(src)}
+                onClick={() => setSelectedImageIndex(index)}
               >
                 <Image src={src} alt={product.name} fill style={{ objectFit: 'cover' }} sizes="80px" />
               </button>

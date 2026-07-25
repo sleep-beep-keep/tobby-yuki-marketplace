@@ -1,6 +1,14 @@
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 200; display: flex; align-items: center; justify-content: center; }
 .modal { background: #fff; max-width: 760px; width: 92%; display: grid; grid-template-columns: 1fr 1fr; position: relative; max-height: 90vh; overflow: hidden; }
 .imgWrap { position: relative; background: var(--tag-bg); min-height: 340px; }
+.imageNavZone { position: absolute; top: 0; bottom: 0; z-index: 2; width: 50%; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.prevZone { left: 0; }
+.nextZone { right: 0; }
+.imageNavButton { position: absolute; top: 50%; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-family: Arial, sans-serif; font-size: 36px; line-height: 1; opacity: 0; pointer-events: none; transform: translateY(-50%); transition: opacity .18s ease, background .18s ease; }
+.prevZone .imageNavButton { left: 16px; }
+.nextZone .imageNavButton { right: 16px; }
+.imageNavZone:hover .imageNavButton, .imageNavZone:focus-visible .imageNavButton { opacity: 1; }
+.imageNavZone:hover .imageNavButton { background: rgba(0,0,0,.72); }
 .thumbs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; padding: 18px 36px 0; }
 .thumb { position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 18px; overflow: hidden; border: 2px solid transparent; padding: 0; background: transparent; cursor: pointer; }
 .thumbActive { border-color: var(--primary); }
