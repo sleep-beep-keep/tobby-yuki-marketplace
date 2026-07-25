@@ -1,15 +1,17 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
 import { useProfile } from '@/context/ProfileContext';
 import styles from './Nav.module.css';
 
 export default function Nav() {
+  const pathname = usePathname();
   const { itemCount } = useCart();
   const { profile, openProfile, isLoggedIn } = useProfile();
   return (
-    <nav className={styles.nav}>
+    <nav className={`${styles.nav} ${pathname !== '/' ? styles.innerPage : ''}`}>
       <Link href="/" className={styles.logo} aria-label="Home">
         <Image
           src="/logo.png"
