@@ -32,7 +32,7 @@ export default function CartPage() {
           {cart.map(item => (
             <div key={item.id} className={styles.item}>
               <div className={styles.itemImg}>
-                <Image src={item.img} alt={item.name} fill style={{objectFit:'cover'}} sizes="88px"/>
+                <Image src={item.img} alt={item.name} fill style={{objectFit:'contain'}} sizes="88px"/>
               </div>
               <div className={styles.itemBody}>
                 <div className={styles.itemSub}>{item.sub}</div>

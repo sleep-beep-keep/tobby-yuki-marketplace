@@ -22,7 +22,7 @@ export default function ProductModal({ product, onClose }) {
       <div className={styles.modal}>
         <button className={styles.close} onClick={onClose}>×</button>
         <div className={styles.imgWrap}>
-          <Image src={selectedImage} alt={product.name} fill style={{ objectFit: 'cover' }} sizes="400px" />
+          <Image src={selectedImage} alt={product.name} fill style={{ objectFit: 'contain' }} sizes="400px" />
           {images.length > 1 && (
             <>
               <button className={`${styles.imageNavZone} ${styles.prevZone}`} type="button" onClick={() => setSelectedImageIndex(index => (index - 1 + images.length) % images.length)} aria-label="Previous product image">
@@ -43,7 +43,7 @@ export default function ProductModal({ product, onClose }) {
                 type="button"
                 onClick={() => setSelectedImageIndex(index)}
               >
-                <Image src={src} alt={product.name} fill style={{ objectFit: 'cover' }} sizes="80px" />
+                <Image src={src} alt={product.name} fill style={{ objectFit: 'contain' }} sizes="80px" />
               </button>
             ))}
           </div>

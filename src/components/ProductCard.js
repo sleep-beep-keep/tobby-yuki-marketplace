@@ -8,7 +8,7 @@ export default function ProductCard({ product, onClick }) {
   return (
     <div className={styles.card} onClick={() => onClick(product)}>
       <div className={styles.imgWrap}>
-        <Image src={product.img} alt={product.name} fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 50vw, 25vw" />
+        <Image src={product.img} alt={product.name} fill style={{ objectFit: 'contain' }} sizes="(max-width:768px) 50vw, 25vw" />
         {product.badge && <div className={`${styles.badge} ${product.badge === 'New' ? styles.badgeNew : ''}`}>{product.badge}</div>}
       </div>
       <div className={styles.info}>

@@ -64,7 +64,7 @@ export default function Home() {
             <button className="btn-ghost">Explore Collection</button>
           </div>
           <div className={styles.bannerImg}>
-            <Image src="/images/banner.jpg" alt="Dragon Wing Harness" fill style={{objectFit:'cover'}} sizes="300px"/>
+            <Image src="/images/banner.jpg" alt="Dragon Wing Harness" fill style={{objectFit:'contain'}} sizes="300px"/>
           </div>
         </Link>
       </section>
@@ -74,7 +74,7 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>Why Tobby & Yuki</h2>
         <div className={styles.whyGrid}>
           <div className={styles.whyImg}>
-            <Image src="/images/why-dog.jpg" alt="Happy dog in harness" fill style={{objectFit:'cover'}} sizes="500px"/>
+            <Image src="/images/why-dog.jpg" alt="Happy dog in harness" fill style={{objectFit:'contain'}} sizes="500px"/>
           </div>
           <div className={styles.whyPoints}>
             {[

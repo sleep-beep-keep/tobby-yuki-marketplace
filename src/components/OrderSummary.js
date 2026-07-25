@@ -12,7 +12,7 @@ export default function OrderSummary({ shipping = 89 }) {
         {cart.map(item => (
           <div key={item.id} className={styles.item}>
             <div className={styles.itemImg}>
-              <Image src={item.img} alt={item.name} fill style={{ objectFit: 'cover' }} sizes="44px" />
+              <Image src={item.img} alt={item.name} fill style={{ objectFit: 'contain' }} sizes="44px" />
             </div>
             <div>
               <div className={styles.itemName}>{item.name} × {item.qty}</div>

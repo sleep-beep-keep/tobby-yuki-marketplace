@@ -1,7 +1,6 @@
 .card { background: #fff; border: 1px solid var(--border); cursor: pointer; transition: all .22s; position: relative; overflow: hidden; }
 .card:hover { box-shadow: 0 10px 32px rgba(0,0,0,.09); transform: translateY(-4px); }
 .imgWrap { aspect-ratio: 1; position: relative; background: var(--tag-bg); overflow: hidden; }
-.card:hover .imgWrap img { transform: scale(1.05); }
 .badge { position: absolute; top: 12px; left: 0; background: var(--primary); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 10px; letter-spacing: .08em; text-transform: uppercase; z-index: 1; }
 .badgeNew { background: var(--accent); }
 .info { padding: 16px; }
