@@ -20,11 +20,6 @@ export default function Nav() {
           priority
         />
       </Link>
-      <ul className={styles.links}>
-        <li><Link href="/products?pet=dogs">Dogs</Link></li>
-        <li><Link href="/products?pet=cats">Cats</Link></li>
-        <li><Link href="/products">Collections</Link></li>
-      </ul>
       <div className={styles.actions}>
         <button className={styles.icon} aria-label="Search">🔍</button>
         <button className={styles.icon} type="button" onClick={openProfile} aria-label="Profile">
