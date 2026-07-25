@@ -7,7 +7,7 @@
 }
 .logo {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
   position: relative;
 }
@@ -15,8 +15,8 @@
 .logoImage {
   display: block;
   width: auto;
-  max-height: 138px;
-  transform: translateY(14px);
+  max-height: 166px;
+  transform: translateY(12px);
   transform-origin: top left;
 }
 .links { display: flex; gap: 32px; list-style: none; }
