@@ -1,11 +1,84 @@
-.wrap { padding: 80px 48px; text-align: center; max-width: 640px; margin: 0 auto; }
-.icon { font-size: 80px; margin-bottom: 24px; animation: pop .4s ease; }
-.title { font-family: var(--font-display); font-size: 44px; font-weight: 600; color: var(--primary); margin-bottom: 10px; }
-.sub { font-size: 15px; color: var(--muted); margin-bottom: 36px; line-height: 1.7; }
-.orderNum { background: var(--light-green); padding: 20px; text-align: center; margin-bottom: 28px; }
-.orderLabel { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-.orderVal { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--primary); }
-.summary { background: #fff; border: 1px solid var(--border); padding: 28px; margin-bottom: 32px; text-align: left; }
-.row { display: flex; justify-content: space-between; font-size: 14px; padding: 8px 0; border-bottom: 1px solid var(--border); }
-.rowLabel { color: var(--muted); }
-.rowTotal { display: flex; justify-content: space-between; font-size: 16px; font-weight: 700; padding-top: 14px; }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background-color: #f9f9f9;
+  min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+}
+
+.card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.icon {
+  color: #22c55e; /* A nice green color */
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--muted);
+}
+
+.orderDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.detailItem span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.detailItem strong {
+  font-weight: 600;
+}
+
+.shippingInfo {
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.shippingInfo p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.footerText {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}

@@ -1,6 +1,7 @@
 import { CartProvider } from '@/context/CartContext';
 import { ProfileProvider } from '@/context/ProfileContext';
 import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 import '@/styles/globals.css';
 
 export const metadata = {
@@ -10,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
           <CartProvider>
             <Nav />
             <main>{children}</main>
+            <Footer />
           </CartProvider>
         </ProfileProvider>
       </body>

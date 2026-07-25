@@ -1,0 +1,16 @@
+.announcementBar {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px 24px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}

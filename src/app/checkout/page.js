@@ -1,45 +1,86 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import CheckoutBar from '@/components/CheckoutBar';
+import Link from 'next/link';
 import OrderSummary from '@/components/OrderSummary';
 import styles from './page.module.css';
+import { ChevronRight } from 'lucide-react';
 
 const DELIVERY_OPTS = [
-  { label: 'Standard Delivery', sub: '4–6 business days · Tracking included', price: 89 },
-  { label: 'Express Delivery', sub: '2 business days · Priority handling', price: 199 },
-  { label: 'Same-Day (Pune only)', sub: 'Order before 12 PM · Delivered by 8 PM', price: 349 },
+  { id: 'standard', label: 'Standard Delivery', sub: '4–6 business days', price: 89 },
+  { id: 'express', label: 'Express Delivery', sub: '2 business days', price: 199 },
 ];
 
 export default function CheckoutPage() {
   const router = useRouter();
-  const [delivery, setDelivery] = useState(0);
+  const [delivery, setDelivery] = useState(DELIVERY_OPTS[0].id);
+  const selectedDelivery = DELIVERY_OPTS.find(opt => opt.id === delivery);
 
   return (
-    <>
-      <CheckoutBar current={2} />
-      <div className={styles.body}>
-        <div>
-          <h2 className={styles.heading}>Delivery Details</h2>
+    <div className={styles.container}>
+      <div className={styles.main}>
+        <div className={styles.header}>
+          <Link href="/" className={styles.logo}>Tobby & Yuki</Link>
+          <nav className={styles.breadcrumb}>
+            <Link href="/cart">Cart</Link>
+            <ChevronRight size={16} />
+            <span className={styles.active}>Information</span>
+            <ChevronRight size={16} />
+            <span>Payment</span>
+          </nav>
+        </div>
+        
+        <form className={styles.form}>
+          <div className={styles.section}>
+            <h2 className={styles.sectionTitle}>Contact Information</h2>
+            <input type="email" placeholder="Email" className={styles.input} />
+          </div>
 
-          <div className={styles.block}>
-            <div className={styles.blockTitle}>Contact Information</div>
-            <div className={styles.formGrid}>
-              <div className={styles.formGroup}><label>First Name</label><input type="text" placeholder="Rahul"/></div>
-              <div className={styles.formGroup}><label>Last Name</label><input type="text" placeholder="Sharma"/></div>
-              <div className={styles.formGroup}><label>Email</label><input type="email" placeholder="rahul@email.com"/></div>
-              <div className={styles.formGroup}><label>Phone</label><input type="tel" placeholder="+91 98765 43210"/></div>
+          <div className={styles.section}>
+            <h2 className={styles.sectionTitle}>Shipping Address</h2>
+            <div className={styles.grid}>
+              <input type="text" placeholder="First name" className={styles.input} />
+              <input type="text" placeholder="Last name" className={styles.input} />
+            </div>
+            <input type="text" placeholder="Address" className={styles.input} />
+            <input type="text" placeholder="Apartment, suite, etc. (optional)" className={styles.input} />
+            <div className={styles.grid}>
+              <input type="text" placeholder="City" className={styles.input} />
+              <select className={styles.input}>
+                <option>Maharashtra</option><option>Delhi</option><option>Karnataka</option>
+              </select>
+              <input type="text" placeholder="PIN code" className={styles.input} />
             </div>
           </div>
 
-          <div className={styles.block}>
-            <div className={styles.blockTitle}>Shipping Address</div>
-            <div className={styles.formGrid}>
-              <div className={`${styles.formGroup} ${styles.full}`}><label>Address Line 1</label><input type="text" placeholder="Flat No., Building Name, Street"/></div>
-              <div className={`${styles.formGroup} ${styles.full}`}><label>Address Line 2 (optional)</label><input type="text" placeholder="Area, Landmark"/></div>
-              <div className={styles.formGroup}><label>City</label><input type="text" placeholder="Pune"/></div>
-              <div className={styles.formGroup}><label>State</label>
-                <select><option>Maharashtra</option><option>Delhi</option><option>Karnataka</option><option>Tamil Nadu</option><option>Gujarat</option></select>
+          <div className={styles.section}>
+            <h2 className={styles.sectionTitle}>Shipping method</h2>
+            <div className={styles.shippingOptions}>
+              {DELIVERY_OPTS.map((opt) => (
+                <label key={opt.id} className={`${styles.shippingOption} ${delivery === opt.id ? styles.selected : ''}`}>
+                  <input type="radio" name="delivery" value={opt.id} checked={delivery === opt.id} onChange={(e) => setDelivery(e.target.value)} />
+                  <div className={styles.optionDetails}>
+                    <span>{opt.label}</span>
+                    <small>{opt.sub}</small>
+                  </div>
+                  <span className={styles.optionPrice}>₹{opt.price}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.actions}>
+            <Link href="/cart" className={styles.backLink}>&lt; Return to cart</Link>
+            <button type="button" className="btn-primary" onClick={() => router.push('/payment')}>Continue to Payment</button>
+          </div>
+        </form>
+      </div>
+      <div className={styles.sidebar}>
+        <OrderSummary shipping={selectedDelivery?.price || 0} />
+      </div>
+    </div>
+  );
+}
               </div>
               <div className={styles.formGroup}><label>PIN Code</label><input type="text" placeholder="411001" maxLength={6}/></div>
             </div>
