@@ -8,15 +8,16 @@
 .logo {
   display: flex;
   align-items: flex-start;
-  height: 100%;
-  position: relative;
+  position: absolute;
+  top: 12px;
+  left: 48px;
 }
 .logo span { color: var(--accent); }
 .logoImage {
   display: block;
   width: auto;
   max-height: 166px;
-  transform: translateY(12px);
+  transform: none;
   transform-origin: top left;
 }
 .links { display: flex; gap: 32px; list-style: none; }
@@ -25,4 +26,4 @@
 .actions { display: flex; align-items: center; gap: 18px; }
 .icon { background: none; border: none; font-size: 20px; color: var(--text); display: flex; align-items: center; position: relative; padding: 4px; }
 .badge { position: absolute; top: -6px; right: -8px; background: var(--cta); color: #fff; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); }
-@media(max-width:768px) { .nav { padding: 0 16px; } .links { display: none; } }
+@media(max-width:768px) { .nav { padding: 0 16px; } .logo { left: 16px; } .links { display: none; } }
