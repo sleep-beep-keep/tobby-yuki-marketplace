@@ -20,15 +20,17 @@ export default function Nav() {
           priority
         />
       </Link>
-      <div className={styles.actions}>
-        <button className={styles.icon} aria-label="Search">🔍</button>
-        <button className={styles.icon} type="button" onClick={openProfile} aria-label="Profile">
-          {isLoggedIn ? '👤' : '🔐'}
-        </button>
-        <Link href="/cart" className={styles.icon} aria-label="Cart">
-          🛒
-          {itemCount > 0 && <span className={styles.badge}>{itemCount}</span>}
-        </Link>
+      <div className={styles.menu}>
+        <button className={styles.menuButton} type="button" aria-label="Open menu" aria-haspopup="true">☰</button>
+        <div className={styles.menuDropdown}>
+          <button className={styles.menuItem} type="button">🔍 Search</button>
+          <button className={styles.menuItem} type="button" onClick={openProfile}>
+            {isLoggedIn ? '👤' : '🔐'} Profile
+          </button>
+          <Link href="/cart" className={styles.menuItem}>
+            🛒 Cart {itemCount > 0 && <span className={styles.badge}>{itemCount}</span>}
+          </Link>
+        </div>
       </div>
     </nav>
   );
