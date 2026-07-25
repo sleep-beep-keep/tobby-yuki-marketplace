@@ -11,7 +11,7 @@ export default function Nav() {
   const { itemCount } = useCart();
   const { profile, openProfile, isLoggedIn } = useProfile();
   return (
-    <nav className={`${styles.nav} ${pathname !== '/' ? styles.innerPage : ''}`}>
+    <nav className={`${styles.nav} ${pathname === '/' ? styles.homePage : styles.innerPage}`}>
       <Link href="/" className={styles.logo} aria-label="Home">
         <Image
           src="/logo.png"

@@ -5,6 +5,8 @@
   justify-content: space-between; height: 64px;
   overflow: visible;
 }
+.homePage { background: #0E4CA1; border-bottom: none; }
+.homePage .menuButton { color: #fff; }
 .innerPage { position: relative; }
 .innerPage .logo { top: 4px; }
 .innerPage .logoImage { max-height: 56px; }
