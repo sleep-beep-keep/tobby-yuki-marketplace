@@ -1,7 +1,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(18, 35, 28, 0.65);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@
   z-index: 9999;
 }
 .modal {
-  width: min(1100px, 100%);
+  width: min(960px, 100%);
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   gap: 0;
@@ -59,20 +59,18 @@
 }
 .formWrap {
   padding: 40px 48px;
-  background: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .close {
   position: absolute;
   top: 20px;
   right: 20px;
   border: none;
-  background: rgba(255,255,255,.13);
-  color: #fff;
-  width: 42px;
-  height: 42px;
+  background: var(--light-bg);
+  color: var(--muted);
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   font-size: 22px;
   cursor: pointer;
@@ -99,23 +97,46 @@
   color: var(--primary);
 }
 .modeSwitch {
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  padding: 4px;
   display: flex;
-  gap: 0.5rem; /* 8px */
 }
 .modeSwitch button {
   flex: 1;
-  /* Inactive State */
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.modeSwitch button.activeMode {
+  background: #fff;
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.methodRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 24px;
+}
+.methodRow button {
   background: rgba(241, 245, 249, 0.6);
   border: 1px solid rgba(226, 232, 240, 0.8);
   color: #475569;
   padding: 6px 16px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 9999px;
   transition: all 0.2s ease;
 }
-.modeSwitch button.activeMode {
-  /* Active State */
+.methodRow button:hover {
+  background: rgba(226, 232, 240, 0.8);
+}
+.methodRow .methodActive {
   background: #0052cc;
   color: #ffffff;
   border-color: #0052cc;
@@ -151,6 +172,7 @@
   font-size: 12px;
   color: var(--primary);
   text-decoration: underline;
+  margin-top: -10px;
 }
 .ctaRow {
   display: flex;
@@ -158,43 +180,24 @@
   flex-wrap: wrap;
   margin-top: 8px;
 }
+.ctaRow .btn-primary {
+  background-color: #073884;
+  border-radius: 8px;
+  width: 100%;
+}
 .googleBtn {
   width: 100%;
   border: 1px solid var(--border);
   background-color: #fff;
   font-weight: 600;
 }
-.separator {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: var(--muted);
-  font-size: 12px;
-  margin: 16px 0;
-}
-.separator::before, .separator::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid var(--border);
-}
-.separator:not(:empty)::before {
-  margin-right: .5em;
-}
-.separator:not(:empty)::after {
-  margin-left: .5em;
-}
-.footerText {
-  margin-top: 18px;
-  font-size: 12px;
-  color: var(--muted);
-}
 .statusMessage {
   background: rgba(77,232,255,.12);
   border: 1px solid rgba(77,232,255,.32);
   color: #10314D;
   padding: 12px 14px;
-  border-radius: 14px;
-  margin-top: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
   font-size: 13px;
 }
 @media(max-width:1024px) {
