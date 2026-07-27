@@ -1,15 +1,22 @@
 .header {
   background: var(--primary);
-  padding: 120px 48px 44px; /* Increased top padding */
+  padding: 100px 48px 32px; /* Slimmed down vertical padding */
   padding-left: 240px; /* Offset content to clear the logo */
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .breadcrumb {
-  font-size: 13px;
-  color: rgba(255,255,255,.5);
-  margin-bottom: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,.7);
+  margin-bottom: 4px;
 }
-.breadcrumb span { color: rgba(255,255,255,.8); }
-.title { font-family: var(--font-display); font-size: 44px; font-weight: 600; color: #fff; }
+.breadcrumb span {
+  color: #fff;
+  font-weight: 500;
+}
+.title { font-family: var(--font-display); font-size: 1.75rem; /* 28px */ font-weight: 600; color: #fff; }
 .layout { display: grid; grid-template-columns: 220px 1fr; gap: 32px; padding: 40px 48px; }
 .filters { flex-shrink: 0; }
 .filterGroup { margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
@@ -28,6 +35,6 @@
   .layout { grid-template-columns: 1fr; padding: 20px 16px; }
   .filters { display: none; }
   .grid { grid-template-columns: repeat(2,1fr); }
-  .header { padding: 120px 16px 24px; } /* Adjust padding for mobile */
-  .title { font-size: 32px; }
+  .header { padding: 100px 16px 24px; padding-left: 24px; } /* Adjust padding for mobile */
+  .title { font-size: 1.5rem; /* 24px */ }
 }

@@ -4,7 +4,6 @@ import { useSearchParams } from 'next/navigation';
 import { PRODUCTS } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
 import ProductModal from '@/components/ProductModal';
-import Footer from '@/components/Footer';
 import styles from './page.module.css';
 
 function ProductsContent() {
@@ -71,7 +70,6 @@ function ProductsContent() {
         </div>
       </div>
 
-      <Footer />
       {modal && <ProductModal product={modal} onClose={() => setModal(null)} />}
     </>
   );
