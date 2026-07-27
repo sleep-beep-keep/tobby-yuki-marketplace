@@ -2,6 +2,7 @@ import { CartProvider } from '@/context/CartContext';
 import { ProfileProvider } from '@/context/ProfileContext';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import BackToTopButton from '@/components/BackToTopButton';
 import '@/styles/globals.css';
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
             <Nav />
             <main>{children}</main>
             <Footer />
+            <BackToTopButton />
           </CartProvider>
         </ProfileProvider>
       </body>

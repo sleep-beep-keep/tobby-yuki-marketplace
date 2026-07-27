@@ -1,8 +1,6 @@
-.footer { background: var(--primary); color: #fff; padding: 56px 48px 24px; }
+.footer { background: linear-gradient(180deg, #0052cc 0%, #022c7a 100%); color: #fff; padding: 56px 48px 24px; }
 .top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
-.logo { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 14px; display: block; }
-.logo span { color: var(--accent); }
-.tagline { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.7; max-width: 240px; }
+.tagline { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.7; max-width: 240px; margin-top: 14px; }
 .col h5 { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 16px; }
 .col a { display: block; font-size: 13px; color: rgba(255,255,255,.7); margin-bottom: 10px; cursor: pointer; transition: color .2s; }
 .col a:hover { color: #fff; }

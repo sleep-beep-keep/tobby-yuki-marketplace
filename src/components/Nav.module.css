@@ -1,10 +1,8 @@
 .headerWrapper {
-  position: sticky;
-  top: 0;
+  position: absolute; /* Let it float over the hero */
   z-index: 50;
   width: 100%;
-  background: radial-gradient(ellipse at top, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%), linear-gradient(180deg, #0033A0 0%, #1F51FF 100%); /* Shiny/Velvety Neon Blue */
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  background: transparent;
 }
 
 .announcementBar {
@@ -23,7 +21,7 @@
 
 .header {
   padding: 16px 48px;
-  min-height: 90px;
+  height: 70px; /* Slim header height */
 }
 
 .container {
@@ -37,15 +35,15 @@
 
 .logo {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 10px; /* Anchor to the top area */
+  /* Removed transform */
   z-index: 60;
   text-decoration: none;
 }
 
 .logoImage {
-  width: 130px;
-  height: 130px;
+  width: 180px; /* 2x size */
+  height: 180px;
   object-fit: contain;
 }
 
@@ -115,6 +113,11 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.actionText {
+  font-size: 14px;
+  margin-left: 8px;
+}
+
 .badge {
   position: absolute;
   top: 0;
@@ -132,26 +135,19 @@
   transform: translate(40%, -40%);
 }
 
-.scrolled {
-  background-color: rgba(31, 81, 255, 0.9); /* Faded/Translucent Neon Blue on scroll */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 @media (max-width: 768px) {
-  .headerWrapper {
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
   .header {
     padding: 12px 24px;
-    height: 80px;
+    height: 60px;
   }
   .logoImage {
-    width: 85px;
-    height: 85px;
+    width: 160px; /* 2x mobile size */
+    height: 160px;
   }
   .logoText {
-    font-size: 1.75rem; /* 28px */
+    display: none;
+  }
+  .actionText {
+    display: none;
   }
 }

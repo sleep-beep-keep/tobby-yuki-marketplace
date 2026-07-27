@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { useCart } from '@/context/CartContext';
 import { useProfile } from '@/context/ProfileContext';
 import styles from './Nav.module.css';
@@ -9,31 +8,14 @@ import { Search, User, Heart, ShoppingBag, Menu } from 'lucide-react';
 
 export default function Nav() {
   const { itemCount } = useCart();
-  const { profile, openProfile, isLoggedIn } = useProfile();
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const { openProfile } = useProfile();
 
   return (
-    <div className={`${styles.headerWrapper} ${isScrolled ? styles.scrolled : ''}`}>
+    <div className={styles.headerWrapper}>
       <div className={styles.announcementBar}>
-        <span>Free Shipping on All Orders</span>
+        <span>Verified B2B Supply Partner</span>
         <span className={styles.divider}>·</span>
-        <span>Get 10% Off Your First Purchase! Use Code: NEWPET</span>
+        <span>Wholesale & Bulk Orders Across India</span>
       </div>
       <header className={styles.header}>
         <div className={styles.container}>
@@ -41,8 +23,8 @@ export default function Nav() {
             <Image
               src="/logo.png"
               alt="Tobby & Yuki"
-              width={130}
-              height={130}
+              width={180}
+              height={180}
               className={styles.logoImage}
               priority
             />
@@ -59,13 +41,11 @@ export default function Nav() {
               </div>
             </div>
 
-            <button className={styles.actionBtn} aria-label="Search"><Search size={20} /></button>
-            <button className={styles.actionBtn} onClick={openProfile} aria-label="Profile">
-              <User size={20} />
+            <button className={styles.actionBtn} onClick={openProfile} aria-label="Dealer Portal Login">
+              <User size={20} /> <span className={styles.actionText}>Dealer Login</span>
             </button>
-            <button className={styles.actionBtn} aria-label="Wishlist"><Heart size={20} /></button>
             <Link href="/cart" className={styles.actionBtn} aria-label="Cart">
-              <ShoppingBag size={20} />
+              <ShoppingBag size={20} /> <span className={styles.actionText}>Request Quote</span>
               {itemCount > 0 && <span className={styles.badge}>{itemCount}</span>}
             </Link>
           </div>
